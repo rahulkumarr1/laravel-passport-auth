@@ -24,4 +24,8 @@ Route::post('login', [RegisterController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
     Route::post('products', [ProductController::class, 'index']);
+    Route::post('add-product', [ProductController::class, 'store']);
+    Route::post('product-by-id', [ProductController::class, 'show']);
+    Route::post('update-product', [ProductController::class, 'update']);
+    Route::post('remove-product', [ProductController::class, 'destroy']);
 });
